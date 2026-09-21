@@ -1,6 +1,6 @@
 # Tràn Bộ Nhớ
 
-**Category:** Pwn
+**Category:** Reverse
 
 ## Đề bài
 
