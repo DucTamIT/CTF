@@ -14,3 +14,4 @@
 | [Socola Bạc Hà](./osint/socola-bac-ha/) | OSINT | `miniCTF{0s1nt_thu_vi_nhw_soc0la_bac_ha}` |
 | [Strange Photo](./forensics/strange-photo/) | Forensics | `miniCTF{chi_l4_m07_buc_4nh_th0i_co_phai_kh0n;}` |
 | [GhostZip](./forensics/ghostzip/) | Forensics | `miniCTF{tu01_tr3_cua_t01_d3p_lam}` |
+| [Chan chan chan](./forensics/chan-chan-chan/) | Forensics | `minictf{ch4n_ch4n_ch4n_ch4n_j14ng_du_b41_lyn3_lyn3_lyn3_lyn3_lyn3_l1n5_zh1_x14}` |
