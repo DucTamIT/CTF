@@ -1,38 +1,74 @@
 # miniCTF 2026 — Write-ups
 
-| Challenge | Category | Flag |
-|---|---|---|
-| [Flappy Bird](./misc/flappy-bird/) | Misc | `miniCTF{r3v3rs3_fl4p_1nt_und3rfl0w}` |
-| [Hoạ My](./misc/hoa-my/) | Misc | `miniCTF{hoa_my_dong_lua_bay_xa_va_giai_ma_tieng_hot_giua_troi}` |
-| [Love Logs](./misc/love-logs/) | Misc | `miniCTF{h1nh_nhu_c0_4y_cung_th1ch_m1nh}` |
-| [MagicCamera](./misc/magic-camera/) | Misc | `miniCTF{B34ut1ful_Fl0W3r!!!!}` |
-| [Welcome](./misc/welcome/) | Misc | `miniCTF{H3l10_m1niCtF_2o26}` |
-| [Avian's Log](./crypto/avians-log/) | Crypto | `miniCTF{n0t_4_r4nd0m_fl1ght_p4th}` |
-| [Chirp chirp](./crypto/chirp-chirp/) | Crypto | `miniCTF{b1n4ry_ch1rp5_fr0m_4f4r}` |
-| [Con chim non](./crypto/con-chim-non/) | Crypto | `miniCTF{be_xuan_mai_lon_ton}` |
-| [Freedom](./crypto/freedom/) | Crypto | `miniCTF{chim_Da_bay_e_caNh_e_CRYPt0_8ReaK_1Ree_lOn6_S47_V0_nat}` |
-| [Socola Bạc Hà](./osint/socola-bac-ha/) | OSINT | `miniCTF{0s1nt_thu_vi_nhw_soc0la_bac_ha}` |
-| [Strange Photo](./forensics/strange-photo/) | Forensics | `miniCTF{chi_l4_m07_buc_4nh_th0i_co_phai_kh0n;}` |
-| [GhostZip](./forensics/ghostzip/) | Forensics | `miniCTF{tu01_tr3_cua_t01_d3p_lam}` |
-| [Chan chan chan](./forensics/chan-chan-chan/) | Forensics | `minictf{ch4n_ch4n_ch4n_ch4n_j14ng_du_b41_lyn3_lyn3_lyn3_lyn3_lyn3_l1n5_zh1_x14}` |
-| [Last Sync](./forensics/last-sync/) | Forensics | `miniCTF{pc4p_k30_dun9_7hu_7u_g01}` |
-| [IDK](./forensics/idk/) | Forensics | `miniCTF{CHUC_MUN9_TH4N9_L0N}` |
-| [Black Crow's Whitening Problem](./reverse/black-crow/) | Reverse | `minictf{y0u_4r3_3v3n_f41r3r_7h4n_n60c_7r1nh}` |
-| [Charlotte's Heart](./reverse/charlotte-heart/) | Reverse | `minictf{y0u_h4v3_0v3rc0m3_7h3_ch4LL3n63_4nd_w0n_h3r_h34r7_:3333}` |
-| [GateKeep v1](./reverse/gatekeep-v1/) | Reverse | `miniCTF{34sy_g4t3_k3ep_r1ght?}` |
-| [GateKeep v2](./reverse/gatekeep-v2/) | Reverse | `miniCTF{5t1ll_345y_g4te_k33p_r1ght?}` |
-| [Hieeusuuuuuiiiiii](./reverse/hieeusuuuuuiiiiii/) | Reverse | `miniCTF{miniCTF{miniCTF{si_vo_bu_lit}}}` |
-| [Tràn Bộ Nhớ](./reverse/tran-bo-nho/) | Reverse | `miniCTF{7517f1b76ce2_DUOn6_d0M1(_f94c5334-7824-4ec4-80c2-9f1246385450}` |
-| [Bird Runner](./web/bird-runner/) | Web | `miniCTF{Kh0N9_pHA1_AN_Cap_Y_7uoN6_7U_DIn0ruNN3r_D4U_nhe_<E}` |
-| [facebook](./web/facebook/) | Web | `miniCTF{xss_messenger_soul_contract}` |
-| [shopeeee](./web/shopeeee/) | Web | `miniCTF{sh0ppeee_1d0r_l3ak5_1nv01ce_t0k3n}` |
-| [threads](./web/threads/) | Web | `miniCTF{avatar_ssrf_renderer_blackbox}` |
-| [web1](./web/web1/) | Web | `miniCTF{l3g4cy_l0gin_qu3ry_n3v3r_di3s}` |
-| [web2](./web/web2/) | Web | `miniCTF{jwt_none_alg_hehehehe}` |
-| [Chim`_loi](./pwn/chim-loi/) | Pwn | `miniCTF{t4i_v1_s4o_c4m_xuc_kia_qu4y_ve_0xcafebabedeadbeef}` |
-| [Công nợ](./pwn/cong-no/) | Pwn | `miniCTF{21.0521361_105.7772793_i_m1ss_h3r}` |
-| [Diệu](./pwn/dieu/) | Pwn | `miniCTF{f0rm4t_str1ng_1s_d4ng3r0us}` |
-| [Rem-emberMe](./pwn/rem-ember-me/) | Pwn | `miniCTF{R3mu_w4_5h1nj1t3m45u_d4tt3...R3mu_w4_5ub4ru-kun_w0_415h1t3m45u...(T.T)}` |
-| [d0nt_tru5t_h1t0g4m1](./pwn/dont-trust-hitogami/) | Pwn | `miniCTF{r0xy_w4_s41k0_n0_w41fu_d4k4r4_z3tt41}` |
-| [Hidden things](./osint/hidden-things/) | OSINT | `miniCTF{m1n3craft_1s_myst3r1ous_4s_sh1t}` |
-| [The Voice 2026](./forensics/the-voice-2026/) | Forensics | *(chưa giải — chưa tìm ra password)* |
+## Crypto
+
+| Challenge | Flag |
+|---|---|
+| [Avian's Log](./crypto/avians-log/) | `miniCTF{n0t_4_r4nd0m_fl1ght_p4th}` |
+| [Chirp chirp](./crypto/chirp-chirp/) | `miniCTF{b1n4ry_ch1rp5_fr0m_4f4r}` |
+| [Con chim non](./crypto/con-chim-non/) | `miniCTF{be_xuan_mai_lon_ton}` |
+| [Freedom](./crypto/freedom/) | `miniCTF{chim_Da_bay_e_caNh_e_CRYPt0_8ReaK_1Ree_lOn6_S47_V0_nat}` |
+
+## Forensics
+
+| Challenge | Flag |
+|---|---|
+| [Chan chan chan](./forensics/chan-chan-chan/) | `minictf{ch4n_ch4n_ch4n_ch4n_j14ng_du_b41_lyn3_lyn3_lyn3_lyn3_lyn3_l1n5_zh1_x14}` |
+| [GhostZip](./forensics/ghostzip/) | `miniCTF{tu01_tr3_cua_t01_d3p_lam}` |
+| [IDK](./forensics/idk/) | `miniCTF{CHUC_MUN9_TH4N9_L0N}` |
+| [Last Sync](./forensics/last-sync/) | `miniCTF{pc4p_k30_dun9_7hu_7u_g01}` |
+| [Strange Photo](./forensics/strange-photo/) | `miniCTF{chi_l4_m07_buc_4nh_th0i_co_phai_kh0n;}` |
+| [The Voice 2026](./forensics/the-voice-2026/) | *(chưa giải — chưa tìm ra password)* |
+
+## Misc
+
+| Challenge | Flag |
+|---|---|
+| [Flappy Bird](./misc/flappy-bird/) | `miniCTF{r3v3rs3_fl4p_1nt_und3rfl0w}` |
+| [Hoạ My](./misc/hoa-my/) | `miniCTF{hoa_my_dong_lua_bay_xa_va_giai_ma_tieng_hot_giua_troi}` |
+| [Love Logs](./misc/love-logs/) | `miniCTF{h1nh_nhu_c0_4y_cung_th1ch_m1nh}` |
+| [MagicCamera](./misc/magic-camera/) | `miniCTF{B34ut1ful_Fl0W3r!!!!}` |
+| [Welcome](./misc/welcome/) | `miniCTF{H3l10_m1niCtF_2o26}` |
+
+## OSINT
+
+| Challenge | Flag |
+|---|---|
+| [Hidden things](./osint/hidden-things/) | `miniCTF{m1n3craft_1s_myst3r1ous_4s_sh1t}` |
+| [Socola Bạc Hà](./osint/socola-bac-ha/) | `miniCTF{0s1nt_thu_vi_nhw_soc0la_bac_ha}` |
+
+## Pwn
+
+| Challenge | Flag |
+|---|---|
+| [Chim`_loi](./pwn/chim-loi/) | `miniCTF{t4i_v1_s4o_c4m_xuc_kia_qu4y_ve_0xcafebabedeadbeef}` |
+| [Công nợ](./pwn/cong-no/) | `miniCTF{21.0521361_105.7772793_i_m1ss_h3r}` |
+| [Diệu](./pwn/dieu/) | `miniCTF{f0rm4t_str1ng_1s_d4ng3r0us}` |
+| [d0nt_tru5t_h1t0g4m1](./pwn/dont-trust-hitogami/) | `miniCTF{r0xy_w4_s41k0_n0_w41fu_d4k4r4_z3tt41}` |
+| [Rem-emberMe](./pwn/rem-ember-me/) | `miniCTF{R3mu_w4_5h1nj1t3m45u_d4tt3...R3mu_w4_5ub4ru-kun_w0_415h1t3m45u...(T.T)}` |
+
+## Reverse
+
+| Challenge | Flag |
+|---|---|
+| [Black Crow's Whitening Problem](./reverse/black-crow/) | `minictf{y0u_4r3_3v3n_f41r3r_7h4n_n60c_7r1nh}` |
+| [Charlotte's Heart](./reverse/charlotte-heart/) | `minictf{y0u_h4v3_0v3rc0m3_7h3_ch4LL3n63_4nd_w0n_h3r_h34r7_:3333}` |
+| [GateKeep v1](./reverse/gatekeep-v1/) | `miniCTF{34sy_g4t3_k3ep_r1ght?}` |
+| [GateKeep v2](./reverse/gatekeep-v2/) | `miniCTF{5t1ll_345y_g4te_k33p_r1ght?}` |
+| [Hieeusuuuuuiiiiii](./reverse/hieeusuuuuuiiiiii/) | `miniCTF{miniCTF{miniCTF{si_vo_bu_lit}}}` |
+| [Tràn Bộ Nhớ](./reverse/tran-bo-nho/) | `miniCTF{7517f1b76ce2_DUOn6_d0M1(_f94c5334-7824-4ec4-80c2-9f1246385450}` |
+
+## Web
+
+| Challenge | Flag |
+|---|---|
+| [Bird Runner](./web/bird-runner/) | `miniCTF{Kh0N9_pHA1_AN_Cap_Y_7uoN6_7U_DIn0ruNN3r_D4U_nhe_<E}` |
+| [facebook](./web/facebook/) | `miniCTF{xss_messenger_soul_contract}` |
+| [shopeeee](./web/shopeeee/) | `miniCTF{sh0ppeee_1d0r_l3ak5_1nv01ce_t0k3n}` |
+| [threads](./web/threads/) | `miniCTF{avatar_ssrf_renderer_blackbox}` |
+| [web1](./web/web1/) | `miniCTF{l3g4cy_l0gin_qu3ry_n3v3r_di3s}` |
+| [web2](./web/web2/) | `miniCTF{jwt_none_alg_hehehehe}` |
+
+---
+
+**Tổng:** 34 challenge — 33 đã giải, 1 chưa (`The Voice 2026`).
