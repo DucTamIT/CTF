@@ -21,3 +21,4 @@
 | [Charlotte's Heart](./reverse/charlotte-heart/) | Reverse | `minictf{y0u_h4v3_0v3rc0m3_7h3_ch4LL3n63_4nd_w0n_h3r_h34r7_:3333}` |
 | [GateKeep v1](./reverse/gatekeep-v1/) | Reverse | `miniCTF{34sy_g4t3_k3ep_r1ght?}` |
 | [GateKeep v2](./reverse/gatekeep-v2/) | Reverse | `miniCTF{5t1ll_345y_g4te_k33p_r1ght?}` |
+| [Hieeusuuuuuiiiiii](./reverse/hieeusuuuuuiiiiii/) | Reverse | `miniCTF{miniCTF{miniCTF{si_vo_bu_lit}}}` |
