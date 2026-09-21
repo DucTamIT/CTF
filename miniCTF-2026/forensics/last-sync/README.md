@@ -13,9 +13,15 @@ Hints:
 
 File đề: [`files/`](./files/)
 
-## Phân tích
+## Giải bằng Wireshark
 
-Pcap chỉ có HTTP giữa `10.13.37.20` và `telemetry.local`. Mở bằng Wireshark với filter `http.request`:
+**1. Lọc HTTP request.** Mở `capture.pcap` bằng Wireshark, filter:
+
+```
+http.request
+```
+
+Trong cột Info có các request tới `telemetry.local`:
 
 | Request | Ghi chú |
 |---|---|
@@ -25,11 +31,15 @@ Pcap chỉ có HTTP giữa `10.13.37.20` và `telemetry.local`. Mở bằng Wire
 | `/telemetry/sync?session=old-91&part=1..2` | Base64 → `retry:1`, `retry:2` |
 | `/telemetry/sync?session=4f2a&part=X&total=6` | **6 mảnh dữ liệu thật** |
 
-Chỉ session `4f2a` có tham số `total=6`, và các mảnh của nó được gửi **không theo thứ tự**: 4, 1, 6, 2, 5, 3.
+**2. Chỉ giữ session thật.** Session `4f2a` là session duy nhất có `total=6` (Hint 1: không phải request nào cũng mang dữ liệu). Lọc riêng các request này:
 
-## Giải
+```
+http.request.uri contains "session=4f2a"
+```
 
-Sắp các mảnh theo `part` (không theo thời gian), rồi URL-decode:
+Các mảnh được gửi theo thứ tự **4, 1, 6, 2, 5, 3**, không đúng thứ tự (Hint 2).
+
+**3. Sắp theo `part`.** Đọc tham số `data` của từng request (nhớ URL-decode `%2F` → `/`, `%2B` → `+`, `%3D` → `=`) rồi xếp theo `part`:
 
 | part | data |
 |---|---|
@@ -40,15 +50,15 @@ Sắp các mảnh theo `part` (không theo thời gian), rồi URL-decode:
 | 5 | `Ny+NTzcwrAUA` |
 | 6 | `b1k/viEAAAA=` |
 
-Ghép lại được một chuỗi Base64 bắt đầu bằng `H4sI`, đây là dấu hiệu của **gzip** (`1f 8b`). Base64 decode rồi gunzip là ra flag.
-
-Script: [`solve.py`](./solve.py)
+Ghép lại:
 
 ```
-base64: H4sIAAAAAAAC/8vNzMt0DnGrLkg2KYjPNjaITynNs4w3zyiNNy+NTzcwrAUAb1k/viEAAAA=
-magic: 1f8b
-flag: miniCTF{pc4p_k30_dun9_7hu_7u_g01}
+H4sIAAAAAAAC/8vNzMt0DnGrLkg2KYjPNjaITynNs4w3zyiNNy+NTzcwrAUAb1k/viEAAAA=
 ```
+
+**4. Giải mã.** Chuỗi Base64 bắt đầu bằng `H4sI` là dấu hiệu của **gzip** (magic `1f 8b`) (Hint 3). Dán vào CyberChef với recipe **From Base64 → Gunzip** là ra flag.
+
+Script tự động (không bắt buộc): [`solve.py`](./solve.py)
 
 ## Flag
 
