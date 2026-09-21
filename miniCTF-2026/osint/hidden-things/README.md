@@ -10,21 +10,11 @@ Trang cá nhân: `https://ispclub.vn/isper/hoangdebongtoi`
 
 ## Tầng 1 — StegZero trong bio
 
-Bio (`bio` trong API `https://ispclub.vn/api/profile/hoangdebongtoi`) dài 1024 ký tự, chứa **664 ký tự zero-width** thuộc **8 codepoint**: `U+200B/C/D`, `U+2060/2062/2063/2064`, `U+FEFF` (số lần: 95/77/92/69/87/89/83/72).
+`bio` (API `https://ispclub.vn/api/profile/hoangdebongtoi`) dài 1024 ký tự, trong đó **664 ký tự zero-width** thuộc **8 codepoint** (`U+200B/C/D`, `U+2060/2062/2063/2064`, `U+FEFF`) → **3 bit/ký tự**, đúng alphabet của **[StegZero](https://stegzero.com/)** (Standard). Header: magic `A55A`, version `1`, nonce `0x4001`, len `238`, CRC32 `0x1899A92A`.
 
-8 codepoint → **3 bit/ký tự**, đúng alphabet của **[StegZero](https://stegzero.com/)** (Standard). 664 × 3 = 1992 bit = 249 byte = **11 byte header + 238 byte message**.
+**Message bị XOR với passphrase.** Header ghi version 1 (theo spec là frame không bảo vệ), nhưng engine vẫn nhận passphrase tuỳ chọn ở version 1 — nên **phải lấy passphrase ở Tầng 2 trước mới decode được bio**. Lưu ý CRC32 là CRC của message *sau* khi XOR, nên **CRC khớp không có nghĩa là decode xong**; dấu hiệu thiếu khoá là bước decode UTF-8 thất bại.
 
-Header: magic `A55A`, version `1`, nonce `0x4001`, len `238`, CRC32 `0x1899A92A`.
-
-### Message bị XOR với passphrase
-
-Header ghi **version 1** — theo spec là frame *không* bảo vệ, **nhưng frame này thì có**. Engine StegZero có nhánh `else if (passphrase) msgBytes = xorWithKey(msgBytes, passphrase);`, tức version 1 vẫn nhận passphrase tuỳ chọn. Ở đây tác giả dùng đúng nhánh đó nên **phải lấy passphrase ở Tầng 2 trước mới decode được bio**.
-
-Dễ nhầm: **CRC32 là CRC của message SAU khi XOR**, không phải plaintext — nên CRC khớp dù chưa có khoá. Dấu hiệu duy nhất là bước decode UTF-8 thất bại.
-
-### Kết quả
-
-XOR 238 byte với passphrase `6677wwutsubb!@#` (lấy ở Tầng 2):
+XOR 238 byte với passphrase `6677wwutsubb!@#` ra:
 
 > Chúc mừng thám tử nhí đã tìm ra tôi :> Hoangdebongtoi đã để lại 1 message nữa với 6 ký tự như sau `7ZIs2s`, liệu bạn có thể tìm ra ý nghĩa của chúng ? Có vẻ vẫn còn thiếu gì đó thì phải.
 
@@ -32,15 +22,13 @@ Bio cũng có gợi ý GitHub: username = `hoangdebongtoi` + ngày sinh (DDMM).
 
 ## Tầng 2 — GitHub
 
-Bio nói ngày sinh ghép vào username. Với ngày sinh **26/4** → GitHub là [`hoangdebongtoi2604`](https://github.com/hoangdebongtoi2604).
+Ngày sinh **26/4** → GitHub [`hoangdebongtoi2604`](https://github.com/hoangdebongtoi2604).
 
 ![Ngày sinh 26/4](./images/birthday_april26.png)
 
-Profile công khai chuỗi **`6677wwutsubb!@#`** — đây chính là **passphrase để decode StegZero ở Tầng 1**, không phải khoá của bước nào khác:
+Profile công khai chuỗi **`6677wwutsubb!@#`** — **passphrase để decode StegZero ở Tầng 1**. Vậy thứ tự giải là: đọc bio → lên GitHub lấy passphrase → quay lại decode bio.
 
 ![Phrase trên GitHub](./images/github_phrase.png)
-
-> Thứ tự giải: đọc bio → thấy gợi ý GitHub → lên GitHub lấy passphrase → **quay lại decode bio** → ra `7ZIs2s`. Tầng 1 và Tầng 2 phụ thuộc nhau, không giải tuần tự một chiều được.
 
 Trong repo `Does-this-repo-have-any-value-`, commit **`d3810eb`** (message "Nothing") thêm dòng **`AeKiE`**:
 
