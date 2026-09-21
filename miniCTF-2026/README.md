@@ -17,3 +17,4 @@
 | [Chan chan chan](./forensics/chan-chan-chan/) | Forensics | `minictf{ch4n_ch4n_ch4n_ch4n_j14ng_du_b41_lyn3_lyn3_lyn3_lyn3_lyn3_l1n5_zh1_x14}` |
 | [Last Sync](./forensics/last-sync/) | Forensics | `miniCTF{pc4p_k30_dun9_7hu_7u_g01}` |
 | [Emperor of Darkness](./forensics/emperor-of-darkness/) | Forensics | `miniCTF{CHUC_MUN9_TH4N9_L0N}` |
+| [Black Crow's Whitening Problem](./reverse/black-crow/) | Reverse | `minictf{y0u_4r3_3v3n_f41r3r_7h4n_n60c_7r1nh}` |
