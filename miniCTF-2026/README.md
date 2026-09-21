@@ -31,3 +31,4 @@
 | [web2](./web/web2/) | Web | `miniCTF{jwt_none_alg_hehehehe}` |
 | [Chim`_loi](./pwn/chim-loi/) | Pwn | `miniCTF{t4i_v1_s4o_c4m_xuc_kia_qu4y_ve_0xcafebabedeadbeef}` |
 | [Công nợ](./pwn/cong-no/) | Pwn | `miniCTF{21.0521361_105.7772793_i_m1ss_h3r}` |
+| [Diệu](./pwn/dieu/) | Pwn | `miniCTF{f0rm4t_str1ng_1s_d4ng3r0us}` |
