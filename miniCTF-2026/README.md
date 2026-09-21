@@ -18,3 +18,4 @@
 | [Last Sync](./forensics/last-sync/) | Forensics | `miniCTF{pc4p_k30_dun9_7hu_7u_g01}` |
 | [Emperor of Darkness](./forensics/emperor-of-darkness/) | Forensics | `miniCTF{CHUC_MUN9_TH4N9_L0N}` |
 | [Black Crow's Whitening Problem](./reverse/black-crow/) | Reverse | `minictf{y0u_4r3_3v3n_f41r3r_7h4n_n60c_7r1nh}` |
+| [Charlotte's Heart](./reverse/charlotte-heart/) | Reverse | `minictf{y0u_h4v3_0v3rc0m3_7h3_ch4LL3n63_4nd_w0n_h3r_h34r7_:3333}` |
