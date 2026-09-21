@@ -1,4 +1,4 @@
-# Máy ảnh kì lạ
+# MagicCamera
 
 **Category:** Misc
 
