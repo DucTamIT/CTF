@@ -38,13 +38,7 @@ zvavPGS{o1a4el_pu1ec5_se0z_4s4e}
 miniCTF{b1n4ry_ch1rp5_fr0m_4f4r}
 ```
 
-Script đầy đủ: [`solve.py`](./solve.py)
-
-```
-$ python solve.py
-binary -> ascii: zvavPGS{o1a4el_pu1ec5_se0z_4s4e}
-rot13:           miniCTF{b1n4ry_ch1rp5_fr0m_4f4r}
-```
+Có thể làm nhanh bằng CyberChef với recipe **From Binary → ROT13**.
 
 ## Flag
 
