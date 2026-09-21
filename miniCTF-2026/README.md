@@ -22,3 +22,4 @@
 | [GateKeep v1](./reverse/gatekeep-v1/) | Reverse | `miniCTF{34sy_g4t3_k3ep_r1ght?}` |
 | [GateKeep v2](./reverse/gatekeep-v2/) | Reverse | `miniCTF{5t1ll_345y_g4te_k33p_r1ght?}` |
 | [Hieeusuuuuuiiiiii](./reverse/hieeusuuuuuiiiiii/) | Reverse | `miniCTF{miniCTF{miniCTF{si_vo_bu_lit}}}` |
+| [Tràn Bộ Nhớ](./pwn/tran-bo-nho/) | Pwn | `miniCTF{7517f1b76ce2_DUOn6_d0M1(_f94c5334-7824-4ec4-80c2-9f1246385450}` |
