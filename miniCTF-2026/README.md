@@ -11,3 +11,4 @@
 | [Chirp chirp](./crypto/chirp-chirp/) | Crypto | `miniCTF{b1n4ry_ch1rp5_fr0m_4f4r}` |
 | [Con chim non](./crypto/con-chim-non/) | Crypto | `miniCTF{be_xuan_mai_lon_ton}` |
 | [Freedom](./crypto/freedom/) | Crypto | `miniCTF{chim_Da_bay_e_caNh_e_CRYPt0_8ReaK_1Ree_lOn6_S47_V0_nat}` |
+| [Socola Bạc Hà](./osint/socola-bac-ha/) | OSINT | `miniCTF{0s1nt_thu_vi_nhw_soc0la_bac_ha}` |
