@@ -16,7 +16,10 @@ _soc0la_bac_ha}
 
 ## Nửa đầu của flag: Google Maps review
 
-Lục trong **Albums** của anh ấy, trong một folder ảnh có ảnh `cmt.png` với nội dung:
+Lục trong **Albums**, dưới một ảnh socola dâu có comment của chính anh ấy:
+
+![Comment](./images/cmt.png)
+
 
 > Chúc mừng bạn đã tìm ra tôi
 > Thực ra tôi thích socola dâu 🙁
@@ -25,7 +28,9 @@ Lục trong **Albums** của anh ấy, trong một folder ảnh có ảnh `cmt.p
 > `11.971491,108.421871`
 > Tôi đã có những đánh giá khá thú vị về nó.
 
-Tra toạ độ `11.971491,108.421871` trên Google Maps ra địa điểm **La Chocotea** (Đà Lạt). Trong phần **Reviews** có một ảnh do tài khoản *Bạc Hà Socola* đăng: nền trắng với một hình xoắn ốc, tức là chữ đã bị làm méo bằng hiệu ứng **Twirl**.
+Tra toạ độ `11.971491,108.421871` trên Google Maps ra địa điểm **La Chocotea** (Lâu đài Chocolate). Trong phần **Reviews** có review của tài khoản *Bạc Hà Socola*, kèm một ảnh nền trắng với hình xoắn ốc, tức là chữ đã bị làm méo bằng hiệu ứng **Twirl**:
+
+![Review](./images/review.png)
 
 Mở ảnh trong Photoshop, vào **Filter → Distort → Twirl** và chỉnh góc (khoảng 542°) để xoắn ngược lại:
 
