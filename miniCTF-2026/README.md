@@ -12,3 +12,4 @@
 | [Con chim non](./crypto/con-chim-non/) | Crypto | `miniCTF{be_xuan_mai_lon_ton}` |
 | [Freedom](./crypto/freedom/) | Crypto | `miniCTF{chim_Da_bay_e_caNh_e_CRYPt0_8ReaK_1Ree_lOn6_S47_V0_nat}` |
 | [Socola Bạc Hà](./osint/socola-bac-ha/) | OSINT | `miniCTF{0s1nt_thu_vi_nhw_soc0la_bac_ha}` |
+| [Strange Photo](./forensics/strange-photo/) | Forensics | `miniCTF{chi_l4_m07_buc_4nh_th0i_co_phai_kh0n;}` |
