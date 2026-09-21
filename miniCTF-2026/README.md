@@ -28,3 +28,4 @@
 | [shopeeee](./web/shopeeee/) | Web | `miniCTF{sh0ppeee_1d0r_l3ak5_1nv01ce_t0k3n}` |
 | [threads](./web/threads/) | Web | `miniCTF{avatar_ssrf_renderer_blackbox}` |
 | [web1](./web/web1/) | Web | `miniCTF{l3g4cy_l0gin_qu3ry_n3v3r_di3s}` |
+| [web2](./web/web2/) | Web | `miniCTF{jwt_none_alg_hehehehe}` |
