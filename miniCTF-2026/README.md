@@ -26,3 +26,4 @@
 | [Bird Runner](./web/bird-runner/) | Web | `miniCTF{Kh0N9_pHA1_AN_Cap_Y_7uoN6_7U_DIn0ruNN3r_D4U_nhe_<E}` |
 | [facebook](./web/facebook/) | Web | `miniCTF{xss_messenger_soul_contract}` |
 | [shopeeee](./web/shopeeee/) | Web | `miniCTF{sh0ppeee_1d0r_l3ak5_1nv01ce_t0k3n}` |
+| [threads](./web/threads/) | Web | `miniCTF{avatar_ssrf_renderer_blackbox}` |
