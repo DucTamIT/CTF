@@ -8,8 +8,6 @@
 
 Trang cá nhân: `https://ispclub.vn/isper/hoangdebongtoi`
 
-> ⚠️ Đây là chuỗi OSINT nhiều tầng. Write-up ghi lại toàn bộ đường đi tới thế giới Minecraft; **bước cipher cuối cùng trong Minecraft vẫn đang xử lý**.
-
 ## Tầng 1 — Zero-width steganography trong bio
 
 Bio của profile trông bình thường nhưng chứa rất nhiều **ký tự Unicode ẩn (zero-width)** xen giữa các chữ. Lấy dữ liệu profile qua API `https://ispclub.vn/api/profile/hoangdebongtoi`, phần `bio` có 8 loại ký tự zero-width khác nhau (`U+200B/C/D`, `U+2060/2062/2063/2064`, `U+FEFF`) → mỗi ký tự mang **3 bit**. Đây là định dạng của công cụ **[StegZero](https://stegzero.com/)** (chế độ Standard).
@@ -77,16 +75,12 @@ ISP profile (bio)
                       └─ world Minecraft "Osint"
 ```
 
-## Tầng cuối — Minecraft *(đang xử lý)*
+## Tầng cuối — Minecraft
 
-Trong world có sách hướng dẫn: *"khoảng 20 chiếc rương, chỉ có 1 chiếc chứa thứ bạn cần"*. Một **trapped chest** (bên dưới có 6 khối TNT — bẫy thật) chứa tờ giấy:
-
-```
->2828?4{>282?4C_3?4?6_7?0?4}
-```
-
-Đây là bước cuối cần giải mã (đang phân tích trên bản world chuẩn).
+Tải world vào Minecraft 1.21.11. Gần điểm spawn có sách của `ronah207` cho biết luật chơi: trong thế giới giấu **khoảng 20 chiếc rương, nhưng chỉ 1 chiếc chứa thứ thật sự cần**. Đa số rương chứa tờ giấy là **decoy** — nhiều tờ decode ra flag giả ghi thẳng "fake flag" (`th3_ch3st_l13d_t0_y0u`, `404_r34l_fl4g_n0t_f0und`, ...). Tìm đúng chiếc rương chứa flag thật là ra kết quả.
 
 ## Flag
 
-*Chưa xác nhận — sẽ cập nhật sau khi giải xong tầng Minecraft.*
+```
+miniCTF{w0w_ur_a_g3nius_0s1nt_play3r}
+```
