@@ -16,7 +16,7 @@ _soc0la_bac_ha}
 
 ## Nửa đầu của flag: Google Maps review
 
-Lục trong **Albums** thấy ảnh `cmt.png` có nội dung:
+Lục trong **Albums** của anh ấy, trong một folder ảnh có ảnh `cmt.png` với nội dung:
 
 > Chúc mừng bạn đã tìm ra tôi
 > Thực ra tôi thích socola dâu 🙁
