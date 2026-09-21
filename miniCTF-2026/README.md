@@ -24,3 +24,4 @@
 | [Hieeusuuuuuiiiiii](./reverse/hieeusuuuuuiiiiii/) | Reverse | `miniCTF{miniCTF{miniCTF{si_vo_bu_lit}}}` |
 | [Tràn Bộ Nhớ](./reverse/tran-bo-nho/) | Reverse | `miniCTF{7517f1b76ce2_DUOn6_d0M1(_f94c5334-7824-4ec4-80c2-9f1246385450}` |
 | [Bird Runner](./web/bird-runner/) | Web | `miniCTF{Kh0N9_pHA1_AN_Cap_Y_7uoN6_7U_DIn0ruNN3r_D4U_nhe_<E}` |
+| [facebook](./web/facebook/) | Web | `miniCTF{xss_messenger_soul_contract}` |
