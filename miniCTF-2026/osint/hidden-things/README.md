@@ -8,13 +8,25 @@
 
 Trang cá nhân: `https://ispclub.vn/isper/hoangdebongtoi`
 
-## Tầng 1 — Zero-width steganography trong bio
+## Tầng 1 — StegZero trong bio
 
-Bio của profile trông bình thường nhưng chứa rất nhiều **ký tự Unicode ẩn (zero-width)** xen giữa các chữ. Lấy dữ liệu profile qua API `https://ispclub.vn/api/profile/hoangdebongtoi`, phần `bio` có 8 loại ký tự zero-width khác nhau (`U+200B/C/D`, `U+2060/2062/2063/2064`, `U+FEFF`) → mỗi ký tự mang **3 bit**. Đây là định dạng của công cụ **[StegZero](https://stegzero.com/)** (chế độ Standard).
+Bio (`bio` trong API `https://ispclub.vn/api/profile/hoangdebongtoi`) dài 1024 ký tự, chứa **664 ký tự zero-width** thuộc **8 codepoint**: `U+200B/C/D`, `U+2060/2062/2063/2064`, `U+FEFF` (số lần: 95/77/92/69/87/89/83/72).
 
-Decode bằng đúng protocol của StegZero (header magic `A55A`, version 1, len 238, CRC khớp) cho ra thông điệp tiếng Việt:
+8 codepoint → **3 bit/ký tự**, đúng alphabet của **[StegZero](https://stegzero.com/)** (Standard). 664 × 3 = 1992 bit = 249 byte = **11 byte header + 238 byte message**.
 
-> Chúc mừng thám tử nhí đã tìm ra tôi :> Hoangdebongtoi đã để lại 1 message nữa với 6 ký tự như sau **`7ZIs2s`**, liệu bạn có thể tìm ra ý nghĩa của chúng? Có vẻ vẫn còn thiếu gì đó thì phải.
+Header: magic `A55A`, version `1`, nonce `0x4001`, len `238`, CRC32 `0x1899A92A`.
+
+### Message bị XOR với passphrase
+
+Header ghi **version 1** — theo spec là frame *không* bảo vệ, **nhưng frame này thì có**. Engine StegZero có nhánh `else if (passphrase) msgBytes = xorWithKey(msgBytes, passphrase);`, tức version 1 vẫn nhận passphrase tuỳ chọn. Ở đây tác giả dùng đúng nhánh đó nên **phải lấy passphrase ở Tầng 2 trước mới decode được bio**.
+
+Dễ nhầm: **CRC32 là CRC của message SAU khi XOR**, không phải plaintext — nên CRC khớp dù chưa có khoá. Dấu hiệu duy nhất là bước decode UTF-8 thất bại.
+
+### Kết quả
+
+XOR 238 byte với passphrase `6677wwutsubb!@#` (lấy ở Tầng 2):
+
+> Chúc mừng thám tử nhí đã tìm ra tôi :> Hoangdebongtoi đã để lại 1 message nữa với 6 ký tự như sau `7ZIs2s`, liệu bạn có thể tìm ra ý nghĩa của chúng ? Có vẻ vẫn còn thiếu gì đó thì phải.
 
 Bio cũng có gợi ý GitHub: username = `hoangdebongtoi` + ngày sinh (DDMM).
 
@@ -24,9 +36,11 @@ Bio nói ngày sinh ghép vào username. Với ngày sinh **26/4** → GitHub l�
 
 ![Ngày sinh 26/4](./images/birthday_april26.png)
 
-Profile công khai chuỗi `6677wwutsubb!@#` (khoá cho các bước sau):
+Profile công khai chuỗi **`6677wwutsubb!@#`** — đây chính là **passphrase để decode StegZero ở Tầng 1**, không phải khoá của bước nào khác:
 
 ![Phrase trên GitHub](./images/github_phrase.png)
+
+> Thứ tự giải: đọc bio → thấy gợi ý GitHub → lên GitHub lấy passphrase → **quay lại decode bio** → ra `7ZIs2s`. Tầng 1 và Tầng 2 phụ thuộc nhau, không giải tuần tự một chiều được.
 
 Trong repo `Does-this-repo-have-any-value-`, commit **`d3810eb`** (message "Nothing") thêm dòng **`AeKiE`**:
 
@@ -67,20 +81,35 @@ Folder Drive chứa:
 
 ```
 ISP profile (bio)
-  └─ StegZero zero-width  →  7ZIs2s
-      └─ GitHub hoangdebongtoi2604, commit d3810eb  →  AeKiE
-          └─ 7ZIs2sAeKiE  →  YouTube
-              └─ comment @vulam8576 (Base64)  →  toạ độ
-                  └─ OpenStreetMap note  →  Google Drive
-                      └─ world Minecraft "Osint"
+  ├─ gợi ý: GitHub = hoangdebongtoi + ngày sinh (DDMM)
+  └─ GitHub hoangdebongtoi2604
+       ├─ passphrase 6677wwutsubb!@#  ──┐ (quay lại decode bio)
+       └─ commit d3810eb  →  AeKiE      │
+  ┌─────────────────────────────────────┘
+  └─ StegZero(bio, passphrase)  →  7ZIs2s
+
+7ZIs2s + AeKiE = 7ZIs2sAeKiE → YouTube → toạ độ → OSM note → Google Drive
+  → world Minecraft "Osint"  →  decode rương  →  flag
 ```
+
+Tầng 1 và Tầng 2 **phụ thuộc vòng**: bio gợi ý tìm GitHub, nhưng bio chỉ decode được sau khi lấy passphrase từ GitHub.
 
 ## Tầng cuối — Minecraft
 
-Tải world vào Minecraft 1.21.11. Gần điểm spawn có sách của `ronah207` cho biết luật chơi: trong thế giới giấu **khoảng 20 chiếc rương, nhưng chỉ 1 chiếc chứa thứ thật sự cần**. Đa số rương chứa tờ giấy là **decoy** — nhiều tờ decode ra flag giả ghi thẳng "fake flag" (`th3_ch3st_l13d_t0_y0u`, `404_r34l_fl4g_n0t_f0und`, ...). Tìm đúng chiếc rương chứa flag thật là ra kết quả.
+Tải world vào Minecraft 1.21.11. Sách của `ronah207` gần điểm spawn nói trong thế giới giấu **khoảng 20 chiếc rương, chỉ 1 chiếc chứa thứ cần tìm**, còn lại là decoy. Thực tế world có **1.674 container** và **120 tờ giấy có `custom_name`** — phần lớn là decoy.
 
 ## Flag
 
 ```
-miniCTF{w0w_ur_a_g3nius_0s1nt_play3r}
+miniCTF{m1n3craft_1s_myst3r1ous_4s_sh1t}
 ```
+
+Flag nằm trong **2 rương** ở 2 vùng khác nhau, encode khác nhau:
+
+| Toạ độ | Rương | Payload thô | Encode |
+|---|---|---|---|
+| `(-98, 79, 147)` | `r.-1.0.mca` slot 23 | `bWluaUNURnttMW4zY3JhZnRfMXNfbXlzdDNyMW91c180c19zaDF0fQ==` | Base64 |
+| `(72, -24, -99)` | `r.0.-1.mca` slot 0 | `` ZE0?4LsUk4Z82^$V{&0;bYC%ZUu}7FbTe`>Z*_BDG;?2bXfbqs `` | Base85 |
+
+Cả hai đều decode ra đúng flag trên. Đây là **flag duy nhất xuất hiện 2 lần** trong world, và cũng là flag duy nhất đúng chủ đề challenge.
+
