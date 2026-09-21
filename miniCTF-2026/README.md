@@ -16,7 +16,7 @@
 | [GhostZip](./forensics/ghostzip/) | Forensics | `miniCTF{tu01_tr3_cua_t01_d3p_lam}` |
 | [Chan chan chan](./forensics/chan-chan-chan/) | Forensics | `minictf{ch4n_ch4n_ch4n_ch4n_j14ng_du_b41_lyn3_lyn3_lyn3_lyn3_lyn3_l1n5_zh1_x14}` |
 | [Last Sync](./forensics/last-sync/) | Forensics | `miniCTF{pc4p_k30_dun9_7hu_7u_g01}` |
-| [Emperor of Darkness](./forensics/emperor-of-darkness/) | Forensics | `miniCTF{CHUC_MUN9_TH4N9_L0N}` |
+| [IDK](./forensics/idk/) | Forensics | `miniCTF{CHUC_MUN9_TH4N9_L0N}` |
 | [Black Crow's Whitening Problem](./reverse/black-crow/) | Reverse | `minictf{y0u_4r3_3v3n_f41r3r_7h4n_n60c_7r1nh}` |
 | [Charlotte's Heart](./reverse/charlotte-heart/) | Reverse | `minictf{y0u_h4v3_0v3rc0m3_7h3_ch4LL3n63_4nd_w0n_h3r_h34r7_:3333}` |
 | [GateKeep v1](./reverse/gatekeep-v1/) | Reverse | `miniCTF{34sy_g4t3_k3ep_r1ght?}` |
