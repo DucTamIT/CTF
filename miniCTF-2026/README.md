@@ -33,3 +33,4 @@
 | [Công nợ](./pwn/cong-no/) | Pwn | `miniCTF{21.0521361_105.7772793_i_m1ss_h3r}` |
 | [Diệu](./pwn/dieu/) | Pwn | `miniCTF{f0rm4t_str1ng_1s_d4ng3r0us}` |
 | [Rem-emberMe](./pwn/rem-ember-me/) | Pwn | `miniCTF{R3mu_w4_5h1nj1t3m45u_d4tt3...R3mu_w4_5ub4ru-kun_w0_415h1t3m45u...(T.T)}` |
+| [d0nt_tru5t_h1t0g4m1](./pwn/dont-trust-hitogami/) | Pwn | `miniCTF{r0xy_w4_s41k0_n0_w41fu_d4k4r4_z3tt41}` |
