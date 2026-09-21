@@ -13,33 +13,11 @@ Hints:
 
 File đề: [`files/`](./files/)
 
-## Giải bằng Wireshark
+## Giải
 
-**1. Lọc HTTP request.** Mở `capture.pcap` bằng Wireshark, filter:
+Mở `capture.pcap` bằng Wireshark và đọc lần lượt từng HTTP request. Trong số đó có các request `/telemetry/sync?session=4f2a&part=X&total=6&data=...` mang tham số `part` và `data`. Các request còn lại chỉ là nhiễu hoặc decoy (`miniCTF{not_the_flag}`, `heartbeat`, `retry`).
 
-```
-http.request
-```
-
-Trong cột Info có các request tới `telemetry.local`:
-
-| Request | Ghi chú |
-|---|---|
-| `/health`, `/assets/app.js`, `/api/heartbeat` | Nhiễu |
-| `/api/status?message=miniCTF{not_the_flag}` | Decoy |
-| `/telemetry/sync?session=debug&part=1..2` | Base64 → `heartbeat:1`, `heartbeat:2` |
-| `/telemetry/sync?session=old-91&part=1..2` | Base64 → `retry:1`, `retry:2` |
-| `/telemetry/sync?session=4f2a&part=X&total=6` | **6 mảnh dữ liệu thật** |
-
-**2. Chỉ giữ session thật.** Session `4f2a` là session duy nhất có `total=6` (Hint 1: không phải request nào cũng mang dữ liệu). Lọc riêng các request này:
-
-```
-http.request.uri contains "session=4f2a"
-```
-
-Các mảnh được gửi theo thứ tự **4, 1, 6, 2, 5, 3**, không đúng thứ tự (Hint 2).
-
-**3. Sắp theo `part`.** Đọc tham số `data` của từng request (nhớ URL-decode `%2F` → `/`, `%2B` → `+`, `%3D` → `=`) rồi xếp theo `part`:
+Các mảnh bị gửi lộn xộn, nên xếp lại theo `part` (URL-decode `%2F` → `/`, `%3D` → `=`):
 
 | part | data |
 |---|---|
@@ -50,15 +28,7 @@ Các mảnh được gửi theo thứ tự **4, 1, 6, 2, 5, 3**, không đúng t
 | 5 | `Ny+NTzcwrAUA` |
 | 6 | `b1k/viEAAAA=` |
 
-Ghép lại:
-
-```
-H4sIAAAAAAAC/8vNzMt0DnGrLkg2KYjPNjaITynNs4w3zyiNNy+NTzcwrAUAb1k/viEAAAA=
-```
-
-**4. Giải mã.** Chuỗi Base64 bắt đầu bằng `H4sI` là dấu hiệu của **gzip** (magic `1f 8b`) (Hint 3). Dán vào CyberChef với recipe **From Base64 → Gunzip** là ra flag.
-
-Script tự động (không bắt buộc): [`solve.py`](./solve.py)
+Ghép lại được một chuỗi Base64 bắt đầu bằng `H4sI`, tức là **gzip**. Dán vào CyberChef, chạy **From Base64 → Gunzip** là ra flag.
 
 ## Flag
 
