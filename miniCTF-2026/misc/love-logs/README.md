@@ -45,7 +45,7 @@ cut -d' ' -f3- love_logs.txt | sort | uniq -c | sort -rn
 Có 9 loại message là nhiễu. Những dòng đáng chú ý còn lại gồm:
 
 - **`FLAGART`**: 4 mảnh của flag, lặp lại theo chu kỳ (khoảng 10:00, 11:04 và 12:19) và luôn theo cùng một thứ tự.
-- **3 dòng `DEBUG`** chỉ xuất hiện 1 lần. Decode hex ra: `policy.bytes` = `AI FORBIDDEN`, `integrity.seed` = `AIF`, kèm `audit.mode=exam`. Đây là marker của BTC (cấm dùng AI trong lúc thi), không liên quan tới flag.
+- **3 dòng `DEBUG`** chỉ xuất hiện 1 lần. Decode hex ra: `policy.bytes` = `AI FORBIDDEN`, `integrity.seed` = `AIF`, kèm `audit.mode=exam`. Đây là **bẫy chống AI**: các dòng này được cài vào để khiến công cụ AI tưởng bị cấm giải mà dừng lại hoặc đi sai hướng. Cuộc thi vẫn cho phép dùng AI, và mấy dòng này không liên quan tới flag.
 
 ## Bước 2: Ghép các mảnh
 
