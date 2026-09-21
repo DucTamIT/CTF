@@ -8,3 +8,4 @@
 | [MagicCamera](./misc/magic-camera/) | Misc | `miniCTF{B34ut1ful_Fl0W3r!!!!}` |
 | [Welcome](./misc/welcome/) | Misc | `miniCTF{H3l10_m1niCtF_2o26}` |
 | [Avian's Log](./crypto/avians-log/) | Crypto | `miniCTF{n0t_4_r4nd0m_fl1ght_p4th}` |
+| [Chirp chirp](./crypto/chirp-chirp/) | Crypto | `miniCTF{b1n4ry_ch1rp5_fr0m_4f4r}` |
